@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFF5F7">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Collection"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#C2185B"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:padding="20dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plushies to Adopt:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#F06292"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvCartDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No plushies selected yet!"
+            android:textSize="18sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="8dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#FCE4EC"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount:"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/tvGrandTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="P0.00"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#C2185B"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Keep Browsing"
+        android:backgroundTint="#F06292"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="32dp"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Finalize Adoption"
+        android:backgroundTint="#C2185B"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+</LinearLayout>
