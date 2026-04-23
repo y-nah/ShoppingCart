@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,15 +18,22 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     Context context;
     List<Product> productList;
     OnItemClickListener listener;
+    OnAddToCartListener cartListener;
 
     public interface OnItemClickListener {
         void onItemClick(Product product);
     }
 
-    public ProductAdapter(Context context, List<Product> productList, OnItemClickListener listener) {
+    public interface OnAddToCartListener {
+        void onAddToCart(Product product);
+    }
+
+    public ProductAdapter(Context context, List<Product> productList,
+                          OnItemClickListener listener, OnAddToCartListener cartListener) {
         this.context = context;
         this.productList = productList;
         this.listener = listener;
+        this.cartListener = cartListener;
     }
 
     @NonNull
@@ -44,8 +52,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.tvDescription.setText(product.getDescription());
         holder.imgProduct.setImageResource(product.getImageResource());
 
-        // Ripple + click
         holder.itemView.setOnClickListener(v -> listener.onItemClick(product));
+        holder.btnAddToCart.setOnClickListener(v -> cartListener.onAddToCart(product));
     }
 
     @Override
@@ -56,6 +64,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgProduct;
         TextView tvTitle, tvPrice, tvDescription;
+        Button btnAddToCart;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,6 +72,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             tvTitle = itemView.findViewById(R.id.tvProductTitle);
             tvPrice = itemView.findViewById(R.id.tvProductPrice);
             tvDescription = itemView.findViewById(R.id.tvProductDescription);
+            btnAddToCart = itemView.findViewById(R.id.btnAddToCart);
         }
     }
 }

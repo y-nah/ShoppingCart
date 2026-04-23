@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
-    int quantity = 1;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             tvSubtotal.setText(String.format("Subtotal: P%.2f", product.getPrice()));
 
             btnMinus.setOnClickListener(v -> {
-                if (quantity > 1) {
+                if (quantity > 0) {
                     quantity--;
                     tvQuantity.setText(String.valueOf(quantity));
                     tvSubtotal.setText(String.format("Subtotal: P%.2f", product.getPrice() * quantity));

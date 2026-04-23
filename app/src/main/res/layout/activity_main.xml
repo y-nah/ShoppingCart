@@ -20,6 +20,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
+        android:layout_weight="1"
         android:clipToPadding="false"/>
+
+    <Button
+        android:id="@+id/btnViewCart"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="View Cart"
+        android:textColor="#C2185B"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_margin="12dp" />
 
 </LinearLayout>
